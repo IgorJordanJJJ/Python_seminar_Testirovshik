@@ -1,9 +1,8 @@
-# Задача 4: Петя, Катя и Сережа делают из бумаги журавликов. Вместе они сделали S журавликов. Сколько журавликов сделал каждый ребенок, если известно,
-#  что Петя и Сережа сделали одинаковое количество журавликов,
-# а Катя сделала в два раза больше журавликов, чем Петя и Сережа вместе?
-
-# Тут загвостка в том что решая уравнение S = x+x+2*(x+x) => S=6x то есть желателно чтобы пользователь вводил число 6 и больше но и при 7 x не целое 
-# надо вводить переменные кратные 6 чтобы x был целым если числа ментше шести то все сдела Катя и значение от 6 до 12 от 12 до 18 и т.д. тоже идут Кате 
+# Задача 4: Требуется определить, можно ли от шоколадки размером n × m долек 
+# отломить k долек, если разрешается сделать один разлом по
+#  прямой между дольками (то есть разломить шоколадку на два прямоугольника).
+#3 2 4 -> yes
+#3 2 1 -> no
 
 
 def Get_and_chek_number():
@@ -15,16 +14,21 @@ def Get_and_chek_number():
             num = int(input("Get number\n"))
         else:
             flag = False
-            print("Nice number")
     return num
 
-def Number_of_cranes(num):
-    x = num//6
-    Katy = num - x*2
-    print(f'Kati has  {Katy} cranes')
-    print(f'Petya and Seryozha have each {x} cranes')
+
+def  Dividing_the_chocolates(m,n,k):
+    if n*m<k:
+        print('It is not possible to divide')
+    elif m>k and n>k:
+        print('It is not possible to divide')
+    elif k%m ==0 or k%n ==0:
+        print('It is possible to divide ')
+    else:
+        print('It is not possible to divide')
 
 
-
-S = Get_and_chek_number()
-Number_of_cranes(S)
+m = Get_and_chek_number()
+n = Get_and_chek_number()
+k = Get_and_chek_number()
+Dividing_the_chocolates(m,n,k)
